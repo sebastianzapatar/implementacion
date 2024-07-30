@@ -16,4 +16,9 @@ public class PostreService implements IPostreService{
     public List<Postre> findAll() {
         return postreDAO.findAll();
     }
+
+    @Override
+    public Postre save(Postre postre) {
+        return postreDAO.save(postre);
+    }
 }
