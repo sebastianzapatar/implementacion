@@ -1,6 +1,7 @@
 package com.example.proyectospring.modelentity;
 import jakarta.persistence.*;
-import lombok.Data;
+import jakarta.validation.constraints.Min;
+import jakarta.validation.constraints.Size;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -18,18 +19,17 @@ public class Postre implements Serializable {
     @Column()
     @Getter()
     @Setter()
+    @Min(1)
     private Double price;
     @Column()
     @Getter()
     @Setter()
+    @Size(min = 5,max = 50,
+            message = "Name Size must be between 5 and 50")
     private String name;
-
     @Column()
     @Getter()
     @Setter()
     private String description;
-    @Column(unique = true,nullable = false)
-    @Getter()
-    @Setter()
-    private String codigoAlterno;
+
 }
