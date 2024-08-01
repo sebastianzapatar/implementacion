@@ -8,15 +8,12 @@ import java.io.Serializable;
 
 @Entity()
 @Table(name="postres")
-@Data()
 public class Postre implements Serializable {
 
     private static final long serialVersionUID = 1L;
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Getter()
-    @Setter()
     private Long id;
     @Column()
     @Getter()
@@ -31,4 +28,8 @@ public class Postre implements Serializable {
     @Getter()
     @Setter()
     private String description;
+    @Column(unique = true,nullable = false)
+    @Getter()
+    @Setter()
+    private String codigoAlterno;
 }
