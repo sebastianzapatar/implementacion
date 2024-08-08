@@ -10,6 +10,5 @@ public interface IPostreDAO
     public List<Postre> findByName(String name);
     public List<Postre> findByNameAndPrice(String name, Double price);
     public List<Postre> findByNameLike(String name);
-    @Query("select p from Postre p where p.name like %?%")
-    public List<Postre> findAllPostres(String nombre);
+
 }
