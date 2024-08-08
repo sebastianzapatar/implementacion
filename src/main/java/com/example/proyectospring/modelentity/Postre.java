@@ -4,7 +4,7 @@ import jakarta.validation.constraints.Min;
 import jakarta.validation.constraints.Size;
 import lombok.Getter;
 import lombok.Setter;
-
+import java.util.List;
 import java.io.Serializable;
 
 @Entity()
@@ -31,5 +31,6 @@ public class Postre implements Serializable {
     @Getter()
     @Setter()
     private String description;
-
+    @ManyToMany(mappedBy = "postres")
+    private List<Chef> chef;
 }
