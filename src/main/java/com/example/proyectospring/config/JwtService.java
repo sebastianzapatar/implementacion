@@ -1,5 +1,6 @@
 package com.example.proyectospring.config;
 
+import io.github.cdimascio.dotenv.Dotenv;
 import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.SignatureAlgorithm;
@@ -18,6 +19,7 @@ import java.util.function.Function;
 public class JwtService {
 
     // Replace this with a secure key in a real application, ideally fetched from environment variables
+    Dotenv dotenv = Dotenv.load();
     public static final String SECRET =
             "5367566B59703373367639792F423F4528482B4D6251655468576D5A71347437";
 

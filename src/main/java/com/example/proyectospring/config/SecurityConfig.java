@@ -38,7 +38,12 @@ public class SecurityConfig {
         http
                 .csrf(AbstractHttpConfigurer::disable) // Deshabilitar CSRF para APIs sin estado
                 .authorizeHttpRequests(auth -> auth
-                        .requestMatchers("/auth/welcome", "/auth/addNewUser", "/auth/generateToken").permitAll() // Permitir acceso sin autenticación
+                        .requestMatchers("/auth/welcome", "/auth/addNewUser",
+                                "/auth/generateToken","/api/posts/**",
+                                "/api/users/**","/api/courses/**",
+                                "/api/students/**",
+                                "/api/people/**",
+                                "/api/pets/**").permitAll() // Permitir acceso sin autenticación
                         .requestMatchers("/auth/user/**").hasAuthority("ROLE_USER") // Requiere rol USER
                         .requestMatchers("/auth/admin/**").hasAuthority("ROLE_ADMIN") // Requiere rol ADMIN
                         .anyRequest().authenticated() // Proteger todos los demás endpoints
