@@ -13,7 +13,8 @@ public class Student {
 
     private String name;
 
-    @ManyToMany(fetch = FetchType.LAZY, cascade = { CascadeType.PERSIST, CascadeType.MERGE })
+    @ManyToMany(fetch = FetchType.LAZY,
+            cascade = { CascadeType.PERSIST, CascadeType.MERGE })
     @JoinTable(
             name = "student_course",
             joinColumns = @JoinColumn(name = "student_id"),

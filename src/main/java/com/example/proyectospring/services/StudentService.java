@@ -35,7 +35,9 @@ public class StudentService {
             student.enrollInCourse(course);
             studentRepository.save(student);
         }
-
+        else{
+            throw new RuntimeException("Student already enrolled in course");
+        }
         return student;
     }
     @Transactional
